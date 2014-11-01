@@ -1,0 +1,8 @@
+var uiLoad = require("ui");
+var geoLoad = require("geo");
+var crudLoad = require("crud");
+
+uiLoad.buttonOne.addEventListener('click', function(evt) {
+	alert("We're sorry. We need your location to retrieve weather data!");
+	//geoLoad.geo();
+});

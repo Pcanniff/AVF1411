@@ -1,0 +1,32 @@
+loadCrud = require("crud").orm;
+exports.netCheck = function(url) {
+	var client = Ti.Network.createHTTPClient({
+		onload : function() {
+			var crud = new loadCrud();
+			crud.dele();
+			var data = JSON.parse(this.responseText);
+			console.log(data);
+			var object = {
+
+				tempF : data.current_observation.feelslike_f,
+				tempC : data.current_observation.feelslike_c,
+				city : data.current_observation.display_location.city,
+				state : data.current_observation.display_location.state_name,
+				wind : data.current_observation.wind_mph
+
+			};
+			crud.create(object);
+		},
+		onerror : function() {
+			var crud = new loadCrud();
+			if (!Ti.Network.online) {
+				
+				crud.create();
+				alert("Could not find connection!");
+
+			}
+		}
+	});
+	client.open("GET", url);
+	client.send();
+};
