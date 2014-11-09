@@ -1,7 +1,11 @@
 =run
 Canniff_Philip_Project1_1411\:launchMode=run
-Canniff_Philip_Project1_1411\:launchShortcut=com.appcelerator.titanium.mobile.ui.android.simulator.launchShortcut.Samsung Galaxy S3 - 4.3 - API 18 - 720x1280
-LAST_LAUNCH_TIMESTAMP=1414864218331
+Canniff_Philip_Project1_1411\:launchShortcut=com.appcelerator.titanium.mobile.ui.android.simulator.launchShortcut.Google Nexus 10 - 4.4.4 - API 19 - 2560x1600
+Canniff_Philip_Project2_1411\:launchMode=run
+Canniff_Philip_Project2_1411\:launchShortcut=com.appcelerator.titanium.mobile.ui.ios.simulator.ipad.launchShortcut.04CECB32-0811-4810-B5FC-88AD4583B821
+CloudCameraTest\:launchMode=run
+CloudCameraTest\:launchShortcut=com.appcelerator.titanium.mobile.ui.ios.run.device.launchShortcut.b56af67c0359a3610205e2219f3a06907574e67b
+LAST_LAUNCH_TIMESTAMP=1415477846730
 eclipse.preferences.version=1
 preference.show.console.onError=true
 preference.studio.perspective.version=103

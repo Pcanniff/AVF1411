@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Canniff_Philip_Project2_1411/Resources/network.js&apos; to &apos;geo.js&apos;" description="Rename resource &apos;network.js&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Resources/network.js" name="geo.js" stamp="1415047920065" updateReferences="true"/>
+</session>

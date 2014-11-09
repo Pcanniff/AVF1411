@@ -1,7 +1,0 @@
-"/Users/philipcanniff/Desktop/Classes/Advanced VF/AVF1411/Canniff_Philip_Project1_1411/build/android/gen/android/support/v7/appcompat/R.java"
-"/Users/philipcanniff/Desktop/Classes/Advanced VF/AVF1411/Canniff_Philip_Project1_1411/build/android/gen/com/fullsail/demoApp/ApplicationStylesheet.java"
-"/Users/philipcanniff/Desktop/Classes/Advanced VF/AVF1411/Canniff_Philip_Project1_1411/build/android/gen/com/fullsail/demoApp/Canniff_philip_project1_1411Activity.java"
-"/Users/philipcanniff/Desktop/Classes/Advanced VF/AVF1411/Canniff_Philip_Project1_1411/build/android/gen/com/fullsail/demoApp/Canniff_philip_project1_1411AppInfo.java"
-"/Users/philipcanniff/Desktop/Classes/Advanced VF/AVF1411/Canniff_Philip_Project1_1411/build/android/gen/com/fullsail/demoApp/Canniff_philip_project1_1411Application.java"
-"/Users/philipcanniff/Desktop/Classes/Advanced VF/AVF1411/Canniff_Philip_Project1_1411/build/android/gen/com/fullsail/demoApp/R.java"
-"/Users/philipcanniff/Desktop/Classes/Advanced VF/AVF1411/Canniff_Philip_Project1_1411/build/android/gen/ti/modules/titanium/ui/R.java"

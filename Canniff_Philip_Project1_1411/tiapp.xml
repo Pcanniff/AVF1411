@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ti:app xmlns:ti="http://ti.appcelerator.org">
+	<property name ="acs-api-key-development" type="string"> NtfK439ikf6q1lzqduHcmnLDQPH9sEZv</property>> 
+	<property name ="acs-api-key-production" type="string"> 2AfcLV7ArgMZautOaumQpz6Dx2aiDDK1</property>> 
     <id>com.fullsail.demoApp</id>
     <name>Canniff_Philip_Project1_1411</name>
     <version>1.0</version>
@@ -16,7 +18,7 @@
     <ios>
         <plist>
             <dict>
-            	<key>NSLocationAlwaysUsageDescription</key>
+                <key>NSLocationAlwaysUsageDescription</key>
                 <string>
                     Specify the reason for accessing the user's location information.
                     This appears in the alert dialog when asking the user for permission to
@@ -53,7 +55,9 @@
         </splash>
         <theme>default</theme>
     </mobileweb>
-    <modules/>
+    <modules>
+        <module platform="commonjs">ti.cloud</module>
+    </modules>
     <deployment-targets>
         <target device="android">true</target>
         <target device="blackberry">false</target>

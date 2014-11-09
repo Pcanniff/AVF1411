@@ -1,0 +1,3 @@
+FIND_BAR_DECORATOR_FIND_ENTRIES=\#\n\#Fri Nov 07 14\:16\:11 EST 2014\n1\=title\n0\=weatherWin\n
+FIND_BAR_DECORATOR_REPLACE_ENTRIES=\#\n\#Fri Nov 07 14\:16\:11 EST 2014\n0\=dayWin\n
+eclipse.preferences.version=1
