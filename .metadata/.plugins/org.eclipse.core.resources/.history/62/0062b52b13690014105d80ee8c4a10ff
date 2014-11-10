@@ -1,0 +1,19 @@
+exports.netCheck = function(e) {
+	var url = "";
+	var client = Ti.Network.createHTTPClient({
+		onload : function() {
+			var data = JSON.parse(this.responseText);
+			console.log(data);
+			var object = {};
+		},
+		onerror : function() {
+			var crud = new loadCrud();
+			if (!Ti.Network.online) {
+				alert("Could not find internet connection!");
+
+			}
+		}
+	});
+	client.open("GET", url);
+	client.send();
+};

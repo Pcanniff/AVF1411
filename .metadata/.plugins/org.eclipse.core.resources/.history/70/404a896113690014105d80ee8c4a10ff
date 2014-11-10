@@ -1,0 +1,19 @@
+exports.netCheck = function(e) {
+	var url = "http://api.soundcloud.com/tracks/resolve.json?&client_id=78a6712cbc12d0e0afe7f1c26930c3e6";
+	var client = Ti.Network.createHTTPClient({
+		onload : function() {
+			var data = JSON.parse(this.responseText);
+			console.log(data);
+			var object = {};
+		},
+		onerror : function() {
+			var crud = new loadCrud();
+			if (!Ti.Network.online) {
+				alert("Could not find internet connection!");
+
+			}
+		}
+	});
+	client.open("GET", url);
+	client.send();
+};
