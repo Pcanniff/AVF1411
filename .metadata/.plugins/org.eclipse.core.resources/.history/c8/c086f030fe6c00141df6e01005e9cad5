@@ -1,0 +1,37 @@
+
+
+exports.crud = function() {
+	var db = Titanium.Database.open('database');
+	db.execute('CREATE TABLE IF NOT EXISTS favorties (id INTEGER PRIMARY KEY, title TEXT, user TEXT, stream TEXT, genre TEXT, artwork TEXT, duration TEXT)');
+	db.close();
+
+	this.read = function() {
+		var db = Ti.Database.open('database');
+		var rows = db.execute('SELECT * FROM favorites');
+		var object = {
+			title : rows.fieldByName('title'),
+			user : rows.fieldByName('user'),
+			stream : rows.fieldByName('stream'),
+			genre : rows.fieldByName('genre'),
+			artwork : rows.fieldByName('artwork'),
+			duration : rows.fieldByName('duration'),
+			
+		};
+
+		rows.close();
+		db.close();
+		loadView(object);
+	};
+	this.create = function(obj) {
+		console.log(obj);
+		var db = Titanium.Database.open('database');
+		db.execute('INSERT INTO weatherData (title, user, stream, genre, artwork, duration) VALUES (?, ?, ?, ?, ?, ?)', obj.title, obj.user, obj.stream, obj.genre, obj.artwork, obj.duration);
+		db.close();
+		this.read();
+	};
+	this.dele = function(id) {
+		var db = Titanium.Database.open('database');
+		db.execute('DELETE FROM weatherData');
+		db.close();
+	};
+};

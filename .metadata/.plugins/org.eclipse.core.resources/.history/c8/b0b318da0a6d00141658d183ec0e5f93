@@ -1,0 +1,43 @@
+var uiLoad = require("ui");
+exports.orm = function(e) {
+	var db = Titanium.Database.open('database');
+	db.execute('CREATE TABLE IF NOT EXISTS favorites (id INTEGER PRIMARY KEY, title TEXT, user TEXT, stream TEXT, genre TEXT, artwork TEXT, duration INTEGER)');
+	db.close();
+
+	this.read = function() {
+		console.log("Entered");
+		var db = Ti.Database.open('database');
+		var rows = db.execute('SELECT id, title, user, stream, genre, artwork, duration FROM favorites');
+		var captureArray = [];
+		var object = {};
+		while (rows.isValidRow()) {
+			console.log("Looped");
+			captureArray.push(object = {
+				
+				title : rows.fieldByName('title'),
+				user : rows.fieldByName('user'),
+				stream : rows.fieldByName('stream'),
+				genre : rows.fieldByName('genre'),
+				artwork : rows.fieldByName('artwork'),
+				duration : rows.fieldByName('duration')
+
+			});
+			console.log(object);
+			rows.next;
+		}
+		rows.close();
+		db.close();
+		console.log("Closed");
+		uiLoad.playlistBuild(array);
+	};
+	this.create = function(obj) {
+		var db = Titanium.Database.open('database');
+		db.execute('INSERT INTO favorites (title, user, stream, genre, artwork, duration) VALUES (?, ?, ?, ?, ?, ?)', obj.title, obj.user, obj.stream, obj.genre, obj.artwork, obj.duration);
+		db.close();
+	};
+	this.dele = function(id) {
+		var db = Titanium.Database.open('database');
+		db.execute('DELETE FROM favorites');
+		db.close();
+	};
+};

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="com.appcelerator.titanium.mobile.ui.ios.installer.launchConfigurationType">
+<booleanAttribute key="ATTR_MINIFY" value="true"/>
+<stringAttribute key="ATTR_PROJECT_NAME" value="Canniff_Philip_SoundCloudShuffle"/>
+<stringAttribute key="ATTR_TITANIUM_DEPLOY_TYPE" value="development"/>
+<stringAttribute key="appid" value="com.fullsail.demoApp"/>
+<stringAttribute key="certificate" value="Jennifer McCarrick (VET4496F2Z)"/>
+<stringAttribute key="debug_config" value="::1416068857303:192.168.2.4"/>
+<stringAttribute key="debug_hosts" value="192.168.2.4"/>
+<stringAttribute key="device_id" value="b56af67c0359a3610205e2219f3a06907574e67b"/>
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
+<listEntry value="/Canniff_Philip_SoundCloudShuffle"/>
+</listAttribute>
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
+<listEntry value="4"/>
+</listAttribute>
+<booleanAttribute key="org.eclipse.debug.core.capture_output" value="true"/>
+<booleanAttribute key="org.eclipse.debug.ui.ATTR_LAUNCH_IN_BACKGROUND" value="true"/>
+<stringAttribute key="process_factory_id" value="com.appcelerator.titanium.ui.logLevelFilteringProcessFactory"/>
+<stringAttribute key="sdk_version" value="8.1"/>
+<stringAttribute key="uuid" value="fcd67cc1-6400-452a-adbf-76e4748a5c21"/>
+</launchConfiguration>

@@ -1,0 +1,15 @@
+var uiLoad = require("ui");
+exports.orm = function(e) {
+	var db = Titanium.Database.open('database');
+	db.execute('CREATE TABLE IF NOT EXISTS favorites (id INTEGER PRIMARY KEY, title TEXT, user TEXT, stream TEXT, genre TEXT, artwork TEXT, duration INTEGER)');
+	db.close();
+
+	this.create = function(obj) {
+		db.execute('INSERT INTO favorites (title, user, stream, genre, artwork, duration) VALUES (?, ?, ?, ?, ?, ?)', obj.title, obj.user, obj.stream, obj.genre, obj.artwork, obj.duration);
+		db.close();
+	};
+	this.dele = function(id) {
+		db.execute('DELETE FROM favorites');
+		db.close();
+	};
+};

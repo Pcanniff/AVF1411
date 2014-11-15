@@ -1,3 +1,3 @@
-FIND_BAR_DECORATOR_FIND_ENTRIES=\#\n\#Fri Nov 07 14\:16\:11 EST 2014\n1\=title\n0\=weatherWin\n
-FIND_BAR_DECORATOR_REPLACE_ENTRIES=\#\n\#Fri Nov 07 14\:16\:11 EST 2014\n0\=dayWin\n
+FIND_BAR_DECORATOR_FIND_ENTRIES=\#\n\#Sat Nov 15 15\:29\:59 EST 2014\n5\=title\n4\=weatherWin\n3\=pausere\n2\=pauseResumeButton\n1\=currentTrack\n0\=audioPlayer\n
+FIND_BAR_DECORATOR_REPLACE_ENTRIES=\#\n\#Sat Nov 15 10\:28\:03 EST 2014\n2\=dayWin\n1\=pausePlay\n0\=index\n
 eclipse.preferences.version=1

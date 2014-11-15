@@ -1,21 +1,30 @@
-exports.netCheck = function(e) {
-	var url = "http://api.soundcloud.com/tracks.json?&client_id=78a6712cbc12d0e0afe7f1c26930c3e6&genres=hiphop";
+exports.netCheck = function(genre) {
+	var url = "http://api.soundcloud.com/tracks.json?&client_id=78a6712cbc12d0e0afe7f1c26930c3e6&genres=" + genre;
+	console.log("HTTP");
 	var client = Ti.Network.createHTTPClient({
 		onload : function() {
 			var streamArray = [];
 			var data = JSON.parse(this.responseText);
-			//console.log(data);
-			for (i=0;i <= 9; i++){
-				var object = {
-					title : data[i].title,
-					user : data[i].user.username,
-					stream : i,
-					genre : data[i].genre
+			for ( i = 0; i < data.length; i++) {
+				var rest = data[i].streamable;
+				if (rest == true) {
+					var object = {
+						title : data[i].title,
+						user : data[i].user.username,
+						stream : data[i].stream_url + "?&client_id=78a6712cbc12d0e0afe7f1c26930c3e6",
+						genre : data[i].genre,
+						artwork : data[i].artwork_url,
+						duration : data[i].duration
+					};
+					streamArray.push(object);
+				} else {
+
 				};
-				streamArray.push(object);
-				console.log(object);
+
 			}
-			console.log(streamArray);
+
+			uiLoad.playlistBuild(streamArray);
+
 		},
 		onerror : function() {
 			var crud = new loadCrud();

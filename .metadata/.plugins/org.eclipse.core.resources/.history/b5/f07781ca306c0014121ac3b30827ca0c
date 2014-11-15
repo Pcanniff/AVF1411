@@ -1,0 +1,5 @@
+var networkLoad = require("network");
+var uiLoad = require("ui");
+//networkLoad.netCheck();
+uiLoad.playlistBuild();
+//uiLoad.entryBuild();

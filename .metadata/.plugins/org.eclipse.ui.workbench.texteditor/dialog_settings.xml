@@ -5,8 +5,11 @@
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="isRegEx"/>
 		<item value="false" key="wholeword"/>
-		<item value="weatherWin" key="selection"/>
+		<item value="currentTrack" key="selection"/>
 		<list key="findhistory">
+			<item value="currentTrack"/>
+			<item value="pauseResumeButton"/>
+			<item value="pausere"/>
 			<item value="weatherWin"/>
 			<item value="title"/>
 		</list>

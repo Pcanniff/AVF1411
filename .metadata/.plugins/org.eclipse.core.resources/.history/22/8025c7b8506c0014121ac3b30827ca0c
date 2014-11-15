@@ -1,0 +1,21 @@
+var networkLoad = require("network");
+var uiLoad = require("ui");
+//networkLoad.netCheck();
+//uiLoad.playlistBuild();
+uiLoad.entryBuild();
+next.addEventListener('click', function() {
+	console.log(player.playing);
+	if (player.playing) {
+		console.log("playing");
+		player.stop();
+		currentTrack = currentTrack + 1;
+		player.url = musicArray[currentTrack].stream;
+		player.play();
+	} else if (player.paused) {
+		console.log("paused");
+		player.stop();
+		currentTrack = currentTrack + 1;
+		player.url = musicArray[currentTrack].stream;
+	}
+
+}); 

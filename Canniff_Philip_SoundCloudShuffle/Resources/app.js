@@ -1,2 +1,8 @@
+Titanium.App.idleTimerDisabled = true;
 var networkLoad = require("network");
-networkLoad.netCheck();
+var uiLoad = require("ui");
+var crudLoad = require("crud").orm;
+
+//networkLoad.netCheck();
+//uiLoad.playlistBuild();
+uiLoad.entryBuild();
