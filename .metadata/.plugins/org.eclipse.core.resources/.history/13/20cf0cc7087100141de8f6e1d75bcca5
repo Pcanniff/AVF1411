@@ -1,0 +1,7 @@
+exports.animate = function(obj){
+	
+	this.slideLeft = Titanium.UI.createAnimation({
+		left = 0,
+		duration = 300
+	});
+};

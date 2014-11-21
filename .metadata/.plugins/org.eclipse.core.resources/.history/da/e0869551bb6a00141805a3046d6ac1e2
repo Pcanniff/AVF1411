@@ -1,3 +1,0 @@
-var networkLoad = require("network");
-var ui = require("ui");
-networkLoad.netCheck();

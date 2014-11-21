@@ -31,91 +31,175 @@ exports.entryBuild = function(e) {
 	}, {
 		title : "Trance"
 	}];
-	//Windows
-	var entryWin = Ti.UI.createWindow({
-		backgroundColor : "#000",
-		fullscreen : true
-	});
+	var artistArray = [{
+		title : "Taylor Swift"
+	}, {
+		title : "Meghan Trainor"
+	}, {
+		title : "Maroon 5"
+	}, {
+		title : "Tove Lo"
+	}, {
+		title : "Ariana Grande"
+	}, {
+		title : "Sam Smith"
+	}, {
+		title : "Ed Sheeran"
+	}, {
+		title : "Sia"
+	}, {
+		title : "Nick Jonas"
+	}, {
+		title : "Echosmith"
+	}, {
+		title : "Selena Gomez"
+	}, {
+		title : "MAGIC!"
+	}, {
+		title : "Chris Brown"
+	},{
+		title : "Nicki Minaj"
+	},{
+		title : "Jeremiah"
+	},{
+		title : "Calvin Harris"
+	},{
+		title : "Big Sean"
+	},{
+		title : "Drake"
+	},{
+		title : "Fall Out Boy"
+	},{
+		title : "Jason Aldean"
+	},{
+		title : "John Legend"
+	},{
+		title : "Blackmill"
+	},];
+	//Windowsd
 	var tableWin = Ti.UI.createWindow({
 		backgroundColor : "#000",
 		fullscreen : true
 	});
 	//Input Fields
-	var userField = Ti.UI.createTextField({
+	var searchField = Ti.UI.createTextField({
+		top: "38%",
 		borderStyle : Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
 		color : '#336699',
-		top : "50%",
-		width : "80%",
-		height : "7%"
-	});
-	var passField = Ti.UI.createTextField({
-		borderStyle : Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
-		color : '#336699',
-		top : "58%",
-		width : "80%",
-		height : "7%"
-	});
-	var logo = Ti.UI.createImageView({
-		image : "images/soundcloud.png",
-		height : 153,
-		width : 153,
-		bottom : 0,
-		right : "1%"
-	});
-	var powered = Ti.UI.createLabel({
-		text : "POWERED BY:",
-		font : {
-			fontFamily : "Roboto",
-			fontSize : "20dp"
-		},
-		color : "#fff",
-		bottom : "5%",
-		right : "20%"
+		width : "45%",
+		height : "5%",
+		hintText: "Enter a keyword to build a playlist!"
 	});
 	//Buttons
-	var login = Ti.UI.createButton({
-		title : 'Login',
-		top : "75%",
-		width : "50%",
-		height : "10%"
+	var search = Ti.UI.createButton({
+		top: "43%",
+		title: "Search",
+		width: "45%",
+		height: "4%",
+		color: "#000",
+		font: {
+			fontSize: "24dp"
+		},
+		backgroundColor: "#FF6600"
 	});
 	var playFav = Ti.UI.createButton({
 		title : "Listen to Favorites",
 		font : {
 			fontSize : "26dp"
 		},
-		top : "10%",
+		top : "54%",
 		width : "50%",
 		height : "5%",
 		color : "#FF6600",
+		borderColor: "#FF6600"
+	});
+	var genre = Ti.UI.createLabel({
+		text: "GENRES:",
+		bottom : "32%",
+		font: {
+			fontSize: "18dp"
+		},
+		left: "22%",
+		color: "#FF6600"
+	});
+	var artists = Ti.UI.createLabel({
+		text: "ARTISTS:",
+		bottom : "32%",
+		font: {
+			fontSize: "18dp"
+		},
+		right: "22%",
+		color: "#FF6600"
+	});
+	var titleLogo = Ti.UI.createImageView({
+		width: "50%",
+		height: "8%",
+		top: "6%",
+		image: "images/cloudsurf.png"
 	});
 	//Table Elements
 	var table = Ti.UI.createTableView({
-		top : "25%",
+		height: "30%",
+		bottom: "1%",
+		right: "51%",
+		left: "2%",
 		backgroundColor : 'white',
-		data : genreArray
+		rowHeight: 40,
+		seperatorColor: "transparent",
+		data: genreArray
 	});
+	var tableTwo = Ti.UI.createTableView({
+		height: "30%",
+		bottom: "1%",
+		left: "51%",
+		right: "2%",
+		backgroundColor : 'white',
+		rowHeight: 40,
+		seperatorColor: "transparent",
+		data: artistArray
+	});
+	var url = "";
+	tableWin.add(artists);
+	tableWin.add(genre);
+	tableWin.add(searchField);
+	tableWin.add(search);
 	tableWin.add(playFav);
-	// entryWin.add(powered);
-	// entryWin.add(logo);
-	// entryWin.add(login);
-	// entryWin.add(userField);
-	// entryWin.add(passField);
+	tableWin.add(titleLogo);
+	tableWin.add(tableTwo);
 	tableWin.add(table);
 	tableWin.open();
 
 	playFav.addEventListener('click', function(e) {
 		crud.read();
 	});
+	search.addEventListener('click', function(e) {
+		if (searchField.value == "") {
+			alert("Please make sure the search field is filled in!");
+		} else {
+			url = "http://api.soundcloud.com/tracks.json?&client_id=78a6712cbc12d0e0afe7f1c26930c3e6&genres=" + searchField.value;
+			networkLoad.netCheck(url);
+			tableWin.close();
+		}
+		
+	});
 	table.addEventListener('click', function(e) {
-		var selection = e.source.title;
-		networkLoad.netCheck(selection);
+		url = "http://api.soundcloud.com/tracks.json?&client_id=78a6712cbc12d0e0afe7f1c26930c3e6&genres=" + e.source.title;
+		networkLoad.netCheck(url);
 		tableWin.close();
 	});
+	tableTwo.addEventListener('click', function(e) {
+		url = "http://api.soundcloud.com/tracks.json?&client_id=78a6712cbc12d0e0afe7f1c26930c3e6&genres=" + e.source.title;
+		networkLoad.netCheck(url);
+		tableWin.close();
+	});
+	
 
 };
 exports.playlistBuild = function(musicList) {
 	var crud = new crudLoad();
+	var slideLeft = Titanium.UI.createAnimation();
+    	slideLeft.left = 0;     
+    	slideLeft.duration = 300;
 	//Windows
 	var index = 0;
 	var musicArray = musicList;
@@ -127,88 +211,99 @@ exports.playlistBuild = function(musicList) {
 	//Audio Player
 	var player = Ti.Media.createAudioPlayer({
 		url : musicArray[index].stream,
-		allowBackground : true
+		allowBackground : true,
+		preload: true
 	});
 	var progress = Ti.UI.createProgressBar({
-		bottom : "4%",
-		width : "65%",
+		top : "66%",
+		width : "90%",
 		height : '40dp',
 		min : 0,
 		max : (musicArray[index].duration / 1000),
 		value : 0,
 		tintColor : '#FF6600',
-		style : Titanium.UI.iPhone.ProgressBarStyle.PLAIN,
 	});
 	var pausePlay = Ti.UI.createButton({
-		bottom : "10%",
+		bottom : "9%",
 		height : 134,
 		width : 134,
 		backgroundImage : "images/pause.png"
 	});
 	var back = Ti.UI.createButton({
-		bottom : "11%",
+		bottom : "10%",
 		width : 100,
 		height : 100,
 		left : "12%",
 		backgroundImage : "images/back.png"
 	});
 	var returnButton = Ti.UI.createButton({
-		title : "Back: New Playlist",
-		top : "2%",
-		width : "25%",
-		height : "5%",
+		top : "1%",
+		width : 80, 
+		height : 80,
 		left : "2%",
 		color : "#FF6600",
+		backgroundImage: "images/return.png"
 	});
 	var favorites = Ti.UI.createButton({
-		title : "Add to Favorites",
+		title : "ADD TO FAVORITES",
 		font : {
-			fontSize : "24dp"
+			fontSize : "22dp"
 		},
-		top : "48%",
-		width : "25%",
+		top : "71%",
+		width : "30%",
 		height : "5%",
-		right : "3%",
 		color : "#FF6600",
 	});
 	var next = Ti.UI.createButton({
-		bottom : "11%",
+		bottom : "10%",
 		width : 100,
 		height : 100,
 		right : "12%",
 		backgroundImage : "images/next.png"
 	});
+	var volume = Ti.UI.createSlider({
+		bottom : "5%",
+		min : 0,
+		max : 100,
+		width : '65%',
+		value : 75,
+		tintColor: "#FF6600",
+		
+	});
 	var artwork = Ti.UI.createImageView({
-		height : 150,
-		width : 150,
-		top : "55%",
-		left : "5%",
+		height : 420,
+		width : 420,
+		top : "10%",
 		image : musicArray[index].artwork
 	});
+	console.log(artwork.image);
+	console.log(musicArray[index].artwork);
 	var title = Ti.UI.createLabel({
-		text : "Title: " + musicArray[index].title,
+		text : musicArray[index].title,
 		font : {
 			fontFamily : "Roboto",
-			fontSize : "26dp"
+			fontSize : "30dp"
 		},
 		color : "#fff",
 		backgroundColor : "#000",
-		top : "58%",
-		left : "26%"
+		top : "55%",
 	});
 	var userName = Ti.UI.createLabel({
-		text : "User: " + musicArray[index].user,
+		text :musicArray[index].user,
 		font : {
 			fontFamily : "Roboto",
-			fontSize : "26dp"
+			fontSize : "20dp"
 		},
 		color : "#fff",
 		backgroundColor : "#000",
-		top : "61%",
-		left : "26%"
+		top : "63%",
 	});
 	player.addEventListener('progress', function(e) {
 		progress.value = Math.round(e.progress / 1000);
+	});
+	volume.addEventListener('change', function(e){
+		player.volume = (e.value/100);
+		
 	});
 	pausePlay.addEventListener('click', function() {
 		if (player.paused) {
@@ -232,18 +327,13 @@ exports.playlistBuild = function(musicList) {
 				};
 
 			} else if (player.paused) {
-				index = index + 1;
-				player.url = musicArray[index].stream;
-				artwork.image = musicArray[index].artwork;
-				title.text = musicArray[index].title;
-				userName.text = musicArray[index].user;
-				audioWin.remove(artwork);
-				audioWin.remove(title);
-				audioWin.remove(userName);
-				audioWin.add(userName);
-				audioWin.add(title);
-				audioWin.add(artwork);
-				pausePlay.backgroundImage = "images/pause.png";
+				if (osname == "android") {
+					player.release();
+				} else {
+					
+					pausePlay.backgroundImage = "images/pause.png";
+					player.stop();
+				};
 
 			}
 		};
@@ -260,18 +350,13 @@ exports.playlistBuild = function(musicList) {
 			};
 
 		} else if (player.paused) {
-			index = index - 1;
-			player.url = musicArray[index].stream;
-			artwork.image = musicArray[index].artwork;
-			title.text = musicArray[index].title;
-			userName.text = musicArray[index].user;
-			audioWin.remove(artwork);
-			audioWin.remove(title);
-			audioWin.remove(userName);
-			audioWin.add(userName);
-			audioWin.add(title);
-			audioWin.add(artwork);
-			pausePlay.backgroundImage = "images/pause.png";
+			index = index - 2;
+			if (osname == "android") {
+					player.release();
+			} else {
+					pausePlay.backgroundImage = "images/pause.png";
+					player.stop();
+			};
 		}
 
 	});
@@ -284,15 +369,16 @@ exports.playlistBuild = function(musicList) {
 	});
 	favorites.addEventListener('click', function(e) {
 		crud.create(musicArray[index]);
+		cloudLoad.cloudSave(musicArray[index]);
 		alert(musicArray[index].title + "\nHas been added to your favorites!");
 	});
 
 	player.addEventListener('change', function(e) {
 		console.log(length, index);
-		if (index == length && e.state == 0) {
+		if (index > length && e.state == 0) {
 			alert("Playlist has ended. Please choose another one!");
 		} else {
-			if (e.state === 7 && index >= 0 && index < length ) {
+			if (e.state === 7 && index >= 0 && index < length) {
 
 				console.log("SONG COMPLETED!!!");
 				if (osname == "android") {
@@ -311,6 +397,7 @@ exports.playlistBuild = function(musicList) {
 				audioWin.add(userName);
 				audioWin.add(title);
 				audioWin.add(artwork);
+				console.log(musicArray[index].artwork);
 				player.play();
 			} else if (e.state === 7 && index <= 0) {
 				if (osname == "android") {
@@ -336,27 +423,41 @@ exports.playlistBuild = function(musicList) {
 	returnButton.addEventListener('click', function(e) {
 		if (osname == "android") {
 			player.release();
-		} else if (player.playing){;
+		} else if (player.playing) {;
 			player.pause();
-		};
+		}
+		;
 		audioWin.close();
 		uiLoad.entryBuild();
 
 	});
-	if (!musicArray[index].id){
+	if (!musicArray[index].id) {
 		audioWin.add(favorites);
 	};
-
-	audioWin.add(returnButton);
+	Ti.Gesture.addEventListener('orientationchange',function(e) {
+		console.log(Ti.Gesture.orientation);
+		if (Ti.Gesture.orientation == 3 || Ti.Gesture.orientation == 4 ) {
+			artwork.top = "8%";
+			artwork.width = 350;
+			artwork.height = 350;
+		} else if (Ti.Gesture.orientation == 1 || Ti.Gesture.orientation == 2){		
+			artwork.top = "10%";
+			artwork.width = 420;
+			artwork.height = 420;
+		}
+});
+	
+	audioWin.add(artwork);
+	audioWin.add(volume);
 	audioWin.add(progress);
 	audioWin.add(userName);
 	audioWin.add(title);
-	audioWin.add(artwork);
+	audioWin.add(returnButton);
 	audioWin.add(next);
 	audioWin.add(back);
 	audioWin.add(pausePlay);
 	audioWin.add(player);
-	audioWin.open();
+	audioWin.open(slideLeft);
 	player.start();
 	progress.show();
 };

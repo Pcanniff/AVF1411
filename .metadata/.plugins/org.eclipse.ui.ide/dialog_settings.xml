@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<list key="installedFeatures">
-		<item value="com.appcelerator.titanium.feature.rcp:3.4.0.201409161931-827bFA2FF7cLVuUcuHD6y8GB189I"/>
-		<item value="com.appcelerator.titanium.feature:3.4.0.1409237002-787A078H7EOIMCBF1L_ILJ3NhVCl"/>
-		<item value="com.appcelerator.titanium.studio:3.4.0.1410892015-7X7W7u8RfoV06JEVl"/>
-		<item value="com.aptana.feature:3.6.1.1410918753-B07o88CDnNDyoQsjs9833355984B"/>
+		<item value="com.appcelerator.titanium.feature.rcp:3.4.1.201410281727-827bFA4FF7cMRA8pQLitX8GB389I"/>
+		<item value="com.appcelerator.titanium.feature:3.4.1.1414542054-787A278H8FMNFDLM1L_ILJ5N3JZ8"/>
+		<item value="com.appcelerator.titanium.studio:3.4.1.1413758367-7X7W7v8RfqXDIIAMy"/>
+		<item value="com.aptana.feature:3.6.2.1413590556-B07o89BabgaJTVkGD9833355984B"/>
 		<item value="org.eclipse.emf.common:2.9.2.v20131212-0545"/>
 		<item value="org.eclipse.emf.ecore:2.9.2.v20131212-0545"/>
 		<item value="org.eclipse.help:2.0.2.v20140221-1700"/>
@@ -29,6 +29,6 @@
 		<item value="323" key="DIALOG_Y_ORIGIN"/>
 		<item value="423" key="DIALOG_HEIGHT"/>
 		<item value="649" key="DIALOG_X_ORIGIN"/>
-		<item value="false" key="TOGGLE_SELECTED"/>
+		<item value="true" key="TOGGLE_SELECTED"/>
 	</section>
 </section>

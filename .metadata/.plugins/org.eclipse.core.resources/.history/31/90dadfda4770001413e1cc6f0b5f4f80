@@ -1,0 +1,48 @@
+exports.netCheck = function(url) {
+	console.log("HTTP");
+	var client = Ti.Network.createHTTPClient({
+		onload : function() {
+			var streamArray = [];
+			var data = JSON.parse(this.responseText);
+			for ( i = 0; i < data.length; i++) {
+				var rest = data[i].streamable;
+				if (rest == true) {
+					var object = {
+						title : data[i].title,
+						user : data[i].user.username,
+						stream : data[i].stream_url + "?&client_id=78a6712cbc12d0e0afe7f1c26930c3e6",
+						genre : data[i].genre,
+						artwork : data[i].artwork_url,
+						duration : data[i].duration
+					};
+					if (!object.artwork) {
+						object.artwork = "images/holder.png";
+					} else {
+						var test = data[i].artwork_url.replace("large", "original");
+						object.user = test;
+						//console.log(test);
+					};
+					if (object.title) {
+						var upper = data[i].title.toUpperCase();
+						console.log(upper);
+						object.title = upper;
+					};
+					streamArray.push(object);
+				};
+
+			}
+
+			uiLoad.playlistBuild(streamArray);
+
+		},
+		onerror : function() {
+			var crud = new loadCrud();
+			if (!Ti.Network.online) {
+				alert("Could not find internet connection!");
+
+			}
+		}
+	});
+	client.open("GET", url);
+	client.send();
+};

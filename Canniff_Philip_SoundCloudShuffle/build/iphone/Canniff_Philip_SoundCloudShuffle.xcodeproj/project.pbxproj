@@ -3136,7 +3136,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "export TITANIUM_PREFIX=\"_Prefix-*\"\necho \"Xcode Pre-Compile Phase: Removing $SHARED_PRECOMPS_DIR/$PROJECT$TITANIUM_PREFIX\"\nfind \"$SHARED_PRECOMPS_DIR\" -name \"$PROJECT$TITANIUM_PREFIX\" -print0 | xargs -0 rm -rf\nif [ \"x$TITANIUM_CLI_XCODEBUILD\" == \"x\" ]; then\n    /usr/local/bin/node \"/usr/local/bin/titanium\" build --platform iphone --sdk \"3.4.0.v20140922135716\" --no-prompt --no-progress-bars --no-banner --no-colors --build-only --xcode\n    exit $?\nelse\n    echo \"skipping pre-compile phase\"\nfi";
+			shellScript = "export TITANIUM_PREFIX=\"_Prefix-*\"\necho \"Xcode Pre-Compile Phase: Removing $SHARED_PRECOMPS_DIR/$PROJECT$TITANIUM_PREFIX\"\nfind \"$SHARED_PRECOMPS_DIR\" -name \"$PROJECT$TITANIUM_PREFIX\" -print0 | xargs -0 rm -rf\nif [ \"x$TITANIUM_CLI_XCODEBUILD\" == \"x\" ]; then\n    /usr/local/bin/node \"/usr/local/bin/titanium\" build --platform iphone --sdk \"3.4.1.GA\" --no-prompt --no-progress-bars --no-banner --no-colors --build-only --xcode\n    exit $?\nelse\n    echo \"skipping pre-compile phase\"\nfi";
 		};
 		24CA8D03111169070084E2DE /* Post-Compile */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -3164,7 +3164,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "export TITANIUM_PREFIX=\"_Prefix-*\"\necho \"Xcode Pre-Compile Phase: Removing $SHARED_PRECOMPS_DIR/$PROJECT$TITANIUM_PREFIX\"\nfind \"$SHARED_PRECOMPS_DIR\" -name \"$PROJECT$TITANIUM_PREFIX\" -print0 | xargs -0 rm -rf\nif [ \"x$TITANIUM_CLI_XCODEBUILD\" == \"x\" ]; then\n    /usr/local/bin/node \"/usr/local/bin/titanium\" build --platform iphone --sdk \"3.4.0.v20140922135716\" --no-prompt --no-progress-bars --no-banner --no-colors --build-only --xcode\n    exit $?\nelse\n    echo \"skipping pre-compile phase\"\nfi";
+			shellScript = "export TITANIUM_PREFIX=\"_Prefix-*\"\necho \"Xcode Pre-Compile Phase: Removing $SHARED_PRECOMPS_DIR/$PROJECT$TITANIUM_PREFIX\"\nfind \"$SHARED_PRECOMPS_DIR\" -name \"$PROJECT$TITANIUM_PREFIX\" -print0 | xargs -0 rm -rf\nif [ \"x$TITANIUM_CLI_XCODEBUILD\" == \"x\" ]; then\n    /usr/local/bin/node \"/usr/local/bin/titanium\" build --platform iphone --sdk \"3.4.1.GA\" --no-prompt --no-progress-bars --no-banner --no-colors --build-only --xcode\n    exit $?\nelse\n    echo \"skipping pre-compile phase\"\nfi";
 		};
 		24D8E4AD119B9D8A00F8CAA6 /* Post-Compile */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -3192,7 +3192,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "export TITANIUM_PREFIX=\"_Prefix-*\"\necho \"Xcode Pre-Compile Phase: Removing $SHARED_PRECOMPS_DIR/$PROJECT$TITANIUM_PREFIX\"\nfind \"$SHARED_PRECOMPS_DIR\" -name \"$PROJECT$TITANIUM_PREFIX\" -print0 | xargs -0 rm -rf\nif [ \"x$TITANIUM_CLI_XCODEBUILD\" == \"x\" ]; then\n    /usr/local/bin/node \"/usr/local/bin/titanium\" build --platform iphone --sdk \"3.4.0.v20140922135716\" --no-prompt --no-progress-bars --no-banner --no-colors --build-only --xcode\n    exit $?\nelse\n    echo \"skipping pre-compile phase\"\nfi";
+			shellScript = "export TITANIUM_PREFIX=\"_Prefix-*\"\necho \"Xcode Pre-Compile Phase: Removing $SHARED_PRECOMPS_DIR/$PROJECT$TITANIUM_PREFIX\"\nfind \"$SHARED_PRECOMPS_DIR\" -name \"$PROJECT$TITANIUM_PREFIX\" -print0 | xargs -0 rm -rf\nif [ \"x$TITANIUM_CLI_XCODEBUILD\" == \"x\" ]; then\n    /usr/local/bin/node \"/usr/local/bin/titanium\" build --platform iphone --sdk \"3.4.1.GA\" --no-prompt --no-progress-bars --no-banner --no-colors --build-only --xcode\n    exit $?\nelse\n    echo \"skipping pre-compile phase\"\nfi";
 		};
 		DABB37B812E8CB280026A6EA /* Post-Compile */ = {
 			isa = PBXShellScriptBuildPhase;

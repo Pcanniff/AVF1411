@@ -1,0 +1,7 @@
+exports.animate = function(obj){
+	
+	var slideLeft = Titanium.UI.createAnimation();
+    slideLeft.left = 0; // to put it back to the left side of the window
+    slideLeft.duration = 300;
+    
+};

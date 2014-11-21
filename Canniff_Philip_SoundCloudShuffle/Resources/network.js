@@ -1,5 +1,4 @@
-exports.netCheck = function(genre) {
-	var url = "http://api.soundcloud.com/tracks.json?&client_id=78a6712cbc12d0e0afe7f1c26930c3e6&genres=" + genre;
+exports.netCheck = function(url) {
 	console.log("HTTP");
 	var client = Ti.Network.createHTTPClient({
 		onload : function() {
@@ -16,9 +15,18 @@ exports.netCheck = function(genre) {
 						artwork : data[i].artwork_url,
 						duration : data[i].duration
 					};
+					if (!object.artwork) {
+						object.artwork = "images/holder.png";
+					} else {
+						var test = data[i].artwork_url.replace("large", "original");
+						object.artwork = test;
+					};
+					if (object.title) {
+						var upper = "POSTED BY: " + data[i].user.username.toUpperCase();
+						console.log(upper);
+						object.user = upper;
+					};
 					streamArray.push(object);
-				} else {
-
 				};
 
 			}

@@ -5,13 +5,16 @@
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="isRegEx"/>
 		<item value="false" key="wholeword"/>
-		<item value="currentTrack" key="selection"/>
+		<item value="soundBar" key="selection"/>
 		<list key="findhistory">
+			<item value="soundBar"/>
+			<item value="progress"/>
+			<item value="artwork"/>
+			<item value="disp"/>
+			<item value=".play"/>
+			<item value="weather"/>
+			<item value="table"/>
 			<item value="currentTrack"/>
-			<item value="pauseResumeButton"/>
-			<item value="pausere"/>
-			<item value="weatherWin"/>
-			<item value="title"/>
 		</list>
 	</section>
 </section>
